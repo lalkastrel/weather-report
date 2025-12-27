@@ -1,4 +1,37 @@
-<img src="weather-report-jojo.png" class="background">
-<app-search-component></app-search-component>
-<p>main-component works!</p>
+<div style="position: absolute; height: 100vh; width: 100vw">
+    <img src="weather-report-jojo.png" class="background">
+    <img src="weather-report-jojo.png" class="background-blur">
+    
+    <app-search-component></app-search-component>
+</div>
+
+<div class="content">
+    @if (weather) {
+        <h1 class="blur">Погода в {{ weather.name }}</h1>
+        <h2 class="blur">Время {{weather.dt | date:'h:mm a':'UTC'}}</h2>
+
+        <p class="blur">Температура {{ weather.main.temp | tempConverter}}°C</p>
+        <p class="blur"> Ощущается как {{ weather.main.feels_like | tempConverter}}°C</p>
+
+        <h2 class="blur">Солнце</h2>
+        <p class="blur">Восход {{weather.sys.sunrise * 1000 | date:'h:mm a':'UTC'}}</p>
+        <p class="blur">Закат {{weather.sys.sunset * 1000 | date:'h:mm a':'UTC'}}</p>
+
+
+        @for (precipitation of weather.weather; track precipitation.id) {
+            <div class="blur weather-condition">
+                <p><strong>{{ precipitation.main }}</strong> - {{ precipitation.description }}</p>
+                <img [src]="'https://openweathermap.org/img/wn/' + precipitation.icon + '.png'" 
+                    [alt]="precipitation.description"
+                    width="50"
+                    height="50">
+            </div>
+        } @empty {
+            <p>Нет данных о погодных условиях</p>
+        }
+    }
+    @else {
+        <h1 class="blur">Такого города не найдено</h1>
+    }
+</div>
 

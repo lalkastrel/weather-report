@@ -1,1 +1,15 @@
-<p>search-component works!</p>
+<tui-textfield tuiChevron>
+    <input
+        tuiComboBox
+        [(ngModel)]="city"
+        placeholder="Введите город..."
+        (ngModelChange)="onCityChange($event)"
+        [strict]="false"
+    />
+ 
+    <tui-data-list-wrapper
+        *tuiTextfieldDropdown
+        new
+        [items]="items | tuiFilterByInput"
+    />
+</tui-textfield>

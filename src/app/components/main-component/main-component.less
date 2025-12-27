@@ -1,7 +1,52 @@
 .background {
     filter: brightness(70%);
-    position: absolute;
     z-index: -1;
+    position: absolute;
     display: flex;
-    top: -15px
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: 100vh;
+}
+
+.background-blur {
+    filter: brightness(50%) blur(5px);
+    z-index: -2;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100vw;
+}
+
+app-search-component {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    min-width: 200px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.blur {
+    backdrop-filter: brightness(50%) blur(5px);
+    padding: 0px 10px;
+    border-radius: 50vh;
+    color: white;
+    margin: 0.3em auto;
+}
+
+.weather-condition {
+    display: flex;
+    align-items: center;
 }
