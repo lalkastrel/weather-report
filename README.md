@@ -1,3 +1,7 @@
+#envirement 
+
+Для корректной работы приложения, необходимо зарегистрироваться на openweathermap.org и получить свой API key, после чего вставить его в файл envirement.ts
+
 # WeatherReport
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
