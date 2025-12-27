@@ -1,4 +1,4 @@
-#envirement 
+# envirement 
 
 Для корректной работы приложения, необходимо зарегистрироваться на openweathermap.org и получить свой API key, после чего вставить его в файл envirement.ts
 
