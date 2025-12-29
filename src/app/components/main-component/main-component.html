@@ -6,7 +6,7 @@
 </div>
 
 <div class="content">
-    @if (weather) {
+    @if (weather(); as weather) {
         <h1 class="blur">Погода в {{ weather.name }}</h1>
         <h2 class="blur">Время {{weather.dt | date:'h:mm a':'UTC'}}</h2>
 

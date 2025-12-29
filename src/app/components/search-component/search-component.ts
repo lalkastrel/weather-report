@@ -29,7 +29,7 @@ export class SearchComponent {
         'New York',
     ] as const;
 
-  protected city: string | null = this.items[0];
+  protected city: string | null = null;
 
   onCityChange(city: string) {
     city = city.toLowerCase()
